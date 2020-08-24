@@ -1,13 +1,13 @@
 # Debian based dists + DKMS
 
-`debuild` should result in a
+`debuild --no-lintian -uc -us` should result in a
 `../fixed-cdc-ether-ncm-dkms_0.1_amd64.deb`, which you can install with
 `dpkg -i ../fixed-cdc-ether-ncm-dkms_0.1_amd64.deb`.
 
 Reload the modules in question with:
 
-	rmmod cdc_mbim cdc_wdm cdc_ncm
-	modprobe cdc_mbim cdc_wdm cdc_ncm
+	rmmod cdc_mbim cdc_wdm cdc_ncm cdc_ether usbnet acpi_mac_passthru
+	modprobe acpi_mac_passthru cdc_ether usbnet cdc_mbim cdc_wdm cdc_ncm
 
 # Source
 
