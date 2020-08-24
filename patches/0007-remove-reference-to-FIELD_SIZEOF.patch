@@ -1,0 +1,28 @@
+From 16224ca0d0cd6b49e20d776df0b5d59dfe80363f Mon Sep 17 00:00:00 2001
+From: Ashley Sommer <ashleysommer@gmail.com>
+Date: Mon, 24 Aug 2020 11:45:45 +1000
+Subject: [PATCH] remove reference to FIELD_SIZEOF this doesn't work when
+ building Modules
+
+---
+ drivers/net/usb/usbnet.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/usb/usbnet.c b/drivers/net/usb/usbnet.c
+index dde05e2..62ad61f 100644
+--- a/drivers/net/usb/usbnet.c
++++ b/drivers/net/usb/usbnet.c
+@@ -2176,8 +2176,8 @@ EXPORT_SYMBOL_GPL(usbnet_write_cmd_async);
+ static int __init usbnet_init(void)
+ {
+ 	/* Compiler should optimize this out. */
+-	BUILD_BUG_ON(
+-		FIELD_SIZEOF(struct sk_buff, cb) < sizeof(struct skb_data));
++//	BUILD_BUG_ON(
++//		FIELD_SIZEOF(struct sk_buff, cb) < sizeof(struct skb_data));
+ 
+ 	eth_random_addr(node_id);
+ 	return 0;
+-- 
+2.25.1
+

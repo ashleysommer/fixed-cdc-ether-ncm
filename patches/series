@@ -1,3 +1,7 @@
 0001-net-cdc_ether-export-generic-usbnet_cdc_update_filte.patch
 0002-net-usbnet-export-usbnet_set_rx_mode.patch
 0003-net-cdc_ncm-hook-into-set_rx_mode-to-admit-multicast.patch
+0004-add-get-set-ethernet-address-functions.patch
+0005-add-acpi-functionality.patch
+0006-add-acpi-mac-address-passthrough.patch
+0007-remove-reference-to-FIELD_SIZEOF.patch
